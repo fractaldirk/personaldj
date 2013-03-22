@@ -7,7 +7,7 @@
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               forum_path(@forum),
               :method => 'delete',
-              :data => 'Are you sure?',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 </div>
 <div class="page-header">
@@ -25,11 +25,10 @@
 <% end %>
 <hr />
 
+<h4>Share your thoughts.. :-)</h4>
+<%= render "comments/form" %>
+
 <% if @forum.comments.present? %>
   <h4 style="color: navy;">Comments</h4>
   <%= render @forum.comments %>
 <% end %>
-
-
-<h4>Share your thoughts.. :-)</h4>
-<%= render "comments/form" %>

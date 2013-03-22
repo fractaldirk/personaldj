@@ -25,11 +25,11 @@
 <% end %>
 <hr />
 
+<h4>Share your thoughts.. :-)</h4>
+<%= render "comments/form" %>
+<br/>
+
 <% if @forum.comments.present? %>
   <h4 style="color: navy;">Comments</h4>
   <%= render @forum.comments %>
 <% end %>
-
-
-<h4>Share your thoughts.. :-)</h4>
-<%= render "comments/form" %>
